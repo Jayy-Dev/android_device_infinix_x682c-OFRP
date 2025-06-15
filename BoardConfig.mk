@@ -4,8 +4,9 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
+BOARD_SYSTEMSDK_VERSIONS := 29
 
-DEVICE_PATH := device/infinix/Infinix-X682C
+DEVICE_PATH := device/infinix/x682c
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -102,7 +103,15 @@ PLATFORM_VERSION := 16.1.0
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
-TW_EXTRA_LANGUAGES := true
+TW_EXTRA_LANGUAGES := 
+TW_INCLUDE_NTFS_3G :=
+TW_EXCLUDE_TZDATA := true
+TW_EXCLUDE_LPDUMP := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
+
+# Lunch
+# add_lunch_combo omni_Infinix-X682C-user
+# add_lunch_combo omni_Infinix-X682C-userdebug
+# add_lunch_combo omni_Infinix-X682C-eng
