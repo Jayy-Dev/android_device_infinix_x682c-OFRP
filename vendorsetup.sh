@@ -36,6 +36,11 @@ fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
+   # Tweaks
+   export OF_FORCE_PREBUILT_KERNEL=1
+   export FOX_VANILLA_BUILD=1
+   export OF_DEFAULT_KEYMASTER_VERSION=4.1
+
     # Version & Variant
     export FOX_MAINTAINER_PATCH_VERSION="2"
     export FOX_VARIANT="A14"
