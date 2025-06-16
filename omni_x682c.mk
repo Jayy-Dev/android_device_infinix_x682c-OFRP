@@ -18,8 +18,10 @@ $(call inherit-product, device/infinix/x682c/device.mk)
 PRODUCT_DEVICE := x682c
 PRODUCT_NAME := omni_x682c
 PRODUCT_BRAND := infinix
-PRODUCT_MODEL := Infinix X682C
+PRODUCT_MODEL := Infinix Hot 10
 PRODUCT_MANUFACTURER := infinix
+
+PRODUCT_SHIPPING_API_LEVEL := 29
 
 PRODUCT_GMS_CLIENTID_BASE := android-infinix
 
@@ -30,8 +32,3 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     android.hardware.fastboot@1.0-impl-mock.recovery
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="vnd_x682c_h694-user 10 QP1A.190711.020 222960 release-keys"
-
-BUILD_FINGERPRINT := Infinix/X682C-GL/Infinix-X682C:10/QP1A.190711.020/220109V295:user/release-keys
