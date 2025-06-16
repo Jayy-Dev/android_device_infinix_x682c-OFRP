@@ -15,6 +15,9 @@ $(call inherit-product, vendor/omni/config/common.mk)
 # Inherit from x682c device
 $(call inherit-product, device/infinix/x682c/device.mk)
 
+# include prebuilt
+# PRODUCT_COPY_FILES += device/infinix/x682c/prebuilt/
+
 PRODUCT_DEVICE := x682c
 PRODUCT_NAME := omni_x682c
 PRODUCT_BRAND := infinix
@@ -32,3 +35,10 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     android.hardware.fastboot@1.0-impl-mock.recovery
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_FINGERPRINT := Infinix/X682C-GL/Infinix-X682C:10/QP1A.190711.020/220109V295:user/release-keys
+    PRIVATE_BUILD_DESC="vnd_x682c_h694-user 10 QP1A.190711.020 222960 release-keys"
