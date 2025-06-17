@@ -51,7 +51,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
     export FOX_REMOVE_AAPT=1
     export FOX_REMOVE_ZIP_BINARY=1
-    export FOX_DRASTIC_SIZE_REDUCTION=1
+    #export FOX_DRASTIC_SIZE_REDUCTION=1
+    export FOX_EXTREME_SIZE_REDUCTION=1
 
 	lunch twrp_$FDEVICE-eng
 	# let's see what are our build VARs
