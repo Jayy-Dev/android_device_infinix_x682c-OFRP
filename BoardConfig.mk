@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/infinix/x682c
+DEVICE_PATH := device/infinix/X682C
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -43,7 +43,7 @@ BOARD_HAS_MTK_HARDWARE := true
 MTK_HARDWARE := true
 
 # Device Prebuilt path
-DEVICE_PREBUILT_PATH := device/infinix/x682c/prebuilt
+DEVICE_PREBUILT_PATH := $(DEVICE_PATH)/prebuilt
 
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 buildvariant=user
 
@@ -60,8 +60,8 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_KERNEL_IMAGE_NAME := Image
 
-TARGET_KERNEL_SOURCE := kernel/infinix/x682c
-TARGET_KERNEL_CONFIG := x682c_defconfig
+TARGET_KERNEL_SOURCE := kernel/infinix/X682C
+TARGET_KERNEL_CONFIG := X682C_defconfig
 
 BOARD_HAS_NO_REAL_SDCARD := true
 
@@ -104,9 +104,6 @@ BOARD_MAIN_PARTITION_LIST := \
 
 # System Root System as root
 BOARD_SUPPRESS_SECURE_ERASE := true
-
-# Include recovery/root
-# BOARD_RAMDISK_ADDITIONAL_DIRS := $(DEVICE_PATH)/recovery/root
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
@@ -154,6 +151,7 @@ TW_INCLUDE_NTFS_3G := false
 TW_EXCLUDE_TZDATA := true
 TW_EXCLUDE_LPDUMP := true
 TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
 LZMA_RAMDISK_TARGETS := recovery
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_SCREEN_TIMEOUT := true
@@ -169,8 +167,3 @@ TW_INCLUDE_FASTBOOTD := true
 # LOGCAT
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
-
-# Lunch
-# add_lunch_combo omni_Infinix-X682C-user
-# add_lunch_combo omni_Infinix-X682C-userdebug
-# add_lunch_combo omni_Infinix-X682C-eng

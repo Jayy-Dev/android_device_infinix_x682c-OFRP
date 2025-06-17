@@ -1,4 +1,4 @@
-# Android device tree for Infinix Infinix X682C (Infinix-X682C)
+# Android device tree for Infinix X682C (Infinix-X682C)
 
 ```
 #

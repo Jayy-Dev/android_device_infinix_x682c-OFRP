@@ -5,5 +5,5 @@ ro.sf.lcd_density=480
 persist.sys.isUsbOtgEnabled=true
 ro.sys.usb.mtp.whql.enable=0
 ro.sys.usb.storage.type=mtp
-ro.mediatek.platform=MT6785
-ro.hardware=mt6785
+ro.mediatek.platform=MT6768
+ro.hardware=mt6768

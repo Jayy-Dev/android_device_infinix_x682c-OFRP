@@ -29,6 +29,7 @@ OF_ADVANCED_SECURITY := 1
 
 # Maintainer
 OF_MAINTAINER := lynx
+
 # OrangeFox GUI settings
 OF_SCREEN_H := 2400
 OF_STATUS_H := 80

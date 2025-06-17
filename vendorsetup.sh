@@ -17,7 +17,7 @@
 #
 # 	Please maintain this if you use this script or any part of it
 #
-FDEVICE="x682c"
+FDEVICE="X682C"
 #set -o xtrace
 
 fox_get_target_device() {
@@ -44,14 +44,16 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     # Version & Variant
     export FOX_MAINTAINER_PATCH_VERSION="2"
     export FOX_VARIANT="A13"
+
+    # Codename
+    export FOX_TARGET_DEVICES="X682C,Infinix-X682C"
     
     # Binaries & Tools
-    # export FOX_USE_BASH_SHELL=1
-    # export FOX_USE_NANO_EDITION=1
+    export FOX_USE_BASH_SHELL=1
+    export FOX_USE_NANO_EDITION=1
 
     export FOX_REMOVE_AAPT=1
     export FOX_REMOVE_ZIP_BINARY=1
-    #export FOX_DRASTIC_SIZE_REDUCTION=1
     export FOX_EXTREME_SIZE_REDUCTION=1
 
 	lunch twrp_$FDEVICE-eng
