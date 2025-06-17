@@ -34,11 +34,12 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-impl-mock.recovery
+    android.hardware.fastboot@1.0-impl-mock.recovery \
+    android.hardware.gatekeeper@1.0-service
 
 # Rootdir
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root/,$(TARGET_COPY_OUT_RECOVERY)/root/)
+# PRODUCT_COPY_FILES += \
+#    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root/,$(TARGET_COPY_OUT_RECOVERY)/root/)
 
 TARGET_RECOVERY_DEVICE_DIRS :=
 
