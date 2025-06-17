@@ -31,10 +31,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-infinix
 # Dynamic Partition
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# Rootdir
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(DEVICE_PATH)/recovery/root/,$(TARGET_COPY_OUT_RECOVERY)/root/)
-
 # Fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
