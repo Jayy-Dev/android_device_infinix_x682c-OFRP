@@ -6,7 +6,3 @@
 #
 
 LOCAL_PATH := device/infinix/x682c
-
-# Rootdir
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root/,$(TARGET_COPY_OUT_RECOVERY)/root/)
