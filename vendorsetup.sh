@@ -46,8 +46,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_VARIANT="A13"
     
     # Binaries & Tools
-    export FOX_USE_BASH_SHELL=1
-    export FOX_USE_NANO_EDITION=1
+    # export FOX_USE_BASH_SHELL=1
+    # export FOX_USE_NANO_EDITION=1
 
     export FOX_REMOVE_AAPT=1
     export FOX_REMOVE_ZIP_BINARY=1
