@@ -43,7 +43,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
     # Version & Variant
     export FOX_MAINTAINER_PATCH_VERSION="2"
-    export FOX_VARIANT="A14"
+    export FOX_VARIANT="A13"
 
     # OF Addons
     export FOX_ENABLE_APP_MANAGER=1
@@ -56,6 +56,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_USE_SED_BINARY=1
     export FOX_USE_XZ_UTILS=1
 
+    export FOX_REMOVE_AAPT=1
+    export FOX_REMOVE_ZIP_BINARY=1
     export FOX_DRASTIC_SIZE_REDUCTION=1
 
 	lunch twrp_$FDEVICE-eng
