@@ -44,10 +44,10 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     # Version & Variant
     export FOX_MAINTAINER_PATCH_VERSION="2"
     export FOX_VARIANT="A13"
+    export FOX_BUILD_TYPE="Alpha"
 
     # Codename
-    export TARGET_DEVICE_ALT="x682b,X682B,InfinixX682B"
-    export FOX_TARGET_DEVICES="InfinixX682C,X682C"
+    export TARGET_DEVICE_ALT="InfinixX682C,Infinix-X682C"
     
     # Binaries & Tools
     export FOX_USE_BASH_SHELL=1
