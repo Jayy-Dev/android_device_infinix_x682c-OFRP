@@ -46,7 +46,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_VARIANT="A13"
 
     # Codename
-    export FOX_TARGET_DEVICES="X682C,Infinix-X682C"
+    export TARGET_DEVICE_ALT="x682b,X682B,InfinixX682B"
+    export FOX_TARGET_DEVICES="InfinixX682C,X682C"
     
     # Binaries & Tools
     export FOX_USE_BASH_SHELL=1
