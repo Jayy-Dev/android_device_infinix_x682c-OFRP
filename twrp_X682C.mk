@@ -1,4 +1,3 @@
-$(call inherit-product-if-exists, $(DEVICE_PATH)/fox_$(PRODUCT_RELEASE_NAME).mk)
 # Inherit from device
 $(call inherit-product, device/infinix/X682C/device.mk)
 
