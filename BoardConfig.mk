@@ -49,7 +49,7 @@ MTK_HARDWARE := true
 # Device Prebuilt path
 DEVICE_PREBUILT_PATH := $(DEVICE_PATH)/prebuilt
 
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 buildvariant=user
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 buildvariant=eng
 
 BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_BOOTIMG_HEADER_VERSION := 2
@@ -66,8 +66,6 @@ BOARD_KERNEL_IMAGE_NAME := Image
 
 TARGET_KERNEL_SOURCE := kernel/infinix/X682C
 TARGET_KERNEL_CONFIG := X682C_defconfig
-
-BOARD_HAS_NO_REAL_SDCARD := true
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
@@ -114,9 +112,6 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/recovery.fstab
 BOARD_HAS_NO_SELECT_BUTTON := true
-
-# Security patch level
-VENDOR_SECURITY_PATCH := 2021-08-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true

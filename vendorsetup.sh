@@ -21,49 +21,50 @@ FDEVICE="X682C"
 #set -o xtrace
 
 fox_get_target_device() {
-local chkdev=$(echo "$BASH_SOURCE" | grep -w $FDEVICE)
-   if [ -n "$chkdev" ]; then 
-      FOX_BUILD_DEVICE="$FDEVICE"
-   else
-      chkdev=$(set | grep BASH_ARGV | grep -w $FDEVICE)
-      [ -n "$chkdev" ] && FOX_BUILD_DEVICE="$FDEVICE"
-   fi
+  local chkdev=$(echo "$BASH_SOURCE" | grep -w $FDEVICE)
+  if [ -n "$chkdev" ]; then
+    FOX_BUILD_DEVICE="$FDEVICE"
+  else
+    chkdev=$(set | grep BASH_ARGV | grep -w $FDEVICE)
+    [ -n "$chkdev" ] && FOX_BUILD_DEVICE="$FDEVICE"
+  fi
 }
 
 if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
-   fox_get_target_device
+  fox_get_target_device
 fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
-   # Tweaks
-   export OF_FORCE_PREBUILT_KERNEL=1
-   export FOX_VANILLA_BUILD=1
-   export OF_DEFAULT_KEYMASTER_VERSION=4.0
+  # Tweaks
+  export OF_FORCE_PREBUILT_KERNEL=1
+  export FOX_VANILLA_BUILD=1
+  export OF_DEFAULT_KEYMASTER_VERSION=4.0
 
-    # Version & Variant
-    export FOX_MAINTAINER_PATCH_VERSION="2"
-    export FOX_VARIANT="A13"
-    export FOX_BUILD_TYPE="Alpha"
+  # Version & Variant
+  export FOX_MAINTAINER_PATCH_VERSION="2"
+  export FOX_VARIANT="A13"
+  export FOX_BUILD_TYPE="Unoffcial"
 
-    # Codename
-    export TARGET_DEVICE_ALT="InfinixX682C,Infinix-X682C"
-    
-    # Binaries & Tools
-    export FOX_USE_BASH_SHELL=1
-    export FOX_USE_NANO_EDITION=1
+  # Codename
+  export TARGET_DEVICE_ALT="InfinixX682C,Infinix-X682C"
 
-    export FOX_REMOVE_AAPT=1
-    export FOX_REMOVE_ZIP_BINARY=1
-    export FOX_EXTREME_SIZE_REDUCTION=1
+  # Binaries & Tools
+  export FOX_USE_BASH_SHELL=1
+  export FOX_USE_NANO_EDITION=1
 
-	lunch twrp_$FDEVICE-eng
-	# let's see what are our build VARs
-	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
-  	   export | grep "FOX" >> $FOX_BUILD_LOG_FILE
-  	   export | grep "OF_" >> $FOX_BUILD_LOG_FILE
-   	   export | grep "TARGET_" >> $FOX_BUILD_LOG_FILE
-  	   export | grep "TW_" >> $FOX_BUILD_LOG_FILE
- 	fi
+  export FOX_REMOVE_AAPT=1
+  export FOX_REMOVE_ZIP_BINARY=1
+  export FOX_EXTREME_SIZE_REDUCTION=1
+
+  lunch twrp_$FDEVICE-eng
+  # let's see what are our build VARs
+  if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
+    export | grep "FOX" >>$FOX_BUILD_LOG_FILE
+    export | grep "OF_" >>$FOX_BUILD_LOG_FILE
+    export | grep "TARGET_" >>$FOX_BUILD_LOG_FILE
+    export | grep "TW_" >>$FOX_BUILD_LOG_FILE
+  fi
 fi
 #
+
